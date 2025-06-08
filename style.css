@@ -1,0 +1,372 @@
+/* Reset some defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background: #f9f9f9;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem 0;
+}
+
+/* Navbar */
+.navbar {
+  background: #1b1b2f;
+  color: #fff;
+  padding: 1.5rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffcc00;
+}
+
+.navigation ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navigation a {
+  background-color: #343a40;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.navigation a:hover {
+  background-color: #ffcc00;
+  color: #1b1b2f;
+  transform: scale(1.05);
+}
+
+/* Hero Section */
+/* Hero Section */
+.hero {
+  background: linear-gradient(to right, #ffc107, #ff5722);
+  color: #fff;
+  text-align: center;
+  padding: 5rem 2rem;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* Dark mode styles for hero */
+body.dark-mode .hero {
+  background: linear-gradient(to right, #333, #111);
+  color: #f1f1f1;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Section Headings */
+.services h2,
+.portfolio h2,
+.contact h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #1b1b2f;
+}
+
+/* Services Section */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card h3 {
+  color: #ff5722;
+  padding: 1rem;
+  transition: color 0.3s;
+}
+
+.card:hover h3 {
+  color: blue;
+}
+
+.card p {
+  padding: 0 1rem 1.5rem;
+}
+
+/* Portfolio Section */
+.portfolio p {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #444;
+}
+
+/* Gallery styles */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+}
+
+/* Contact Section */
+.contact p {
+  text-align: center;
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Footer */
+footer {
+  background: #1b1b2f;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.95rem;
+}
+
+/* Optional: Back to top button */
+.back-to-top {
+  display: inline-block;
+  background: #ff5722;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 30px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s;
+}
+
+.back-to-top:hover {
+  background: #e64a19;
+}
+
+/* Portfolio Gallery Grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 2rem 0;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  height: 200px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  background: #ff5722;
+  color: white;
+  padding: 0.7rem 1rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  display: none;
+  transition: background 0.3s ease;
+  z-index: 999;
+}
+
+.back-to-top:hover {
+  background: #e64a19;
+}
+
+/* Toggle switch */
+.dark-toggle {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+  margin-left: 1rem;
+}
+.dark-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: #ffcc00;
+}
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+/* DARK MODE */
+body.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+body.dark-mode header,
+body.dark-mode footer {
+  background-color: #1a1a1a;
+}
+body.dark-mode .card {
+  background: #222;
+  color: #f1f1f1;
+}
+body.dark-mode .card h3 {
+  color: #ffcc00;
+}
+body.dark-mode .card:hover h3 {
+  color: #ff4081;
+}
+body.dark-mode .navigation a {
+  background-color: #333;
+  color: #fff;
+}
+body.dark-mode .navigation a:hover {
+  background-color: #ffcc00;
+  color: #121212;
+}
+
+/* Smooth transitions for dark mode */
+body,
+header,
+footer,
+.card,
+.navigation a {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body.dark-mode .card {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.dark-toggle .slider,
+.dark-toggle .slider:before {
+  transition: 0.4s ease;
+}
+
+.video-gallery {
+  padding: 4rem 0;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.video-gallery h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #1b1b2f;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  align-items: start;
+}
+
+.video-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+}
+
+.video-card video {
+  width: 100%;
+  border-radius: 8px;
+  max-height: 240px;
+  object-fit: cover;
+}
+
+.video-card p {
+  margin-top: 0.8rem;
+  color: #555;
+  font-size: 1rem;
+}

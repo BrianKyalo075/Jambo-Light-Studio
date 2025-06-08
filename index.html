@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jambo Light Studio | Professional Studio Services</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="navbar">
+    <div class="container">
+      <h1 class="brand">Jambo Light Studio</h1>
+      <nav class="navigation">
+        <ul class="nav-links">
+            <!-- Dark mode toggle -->
+<label class="dark-toggle">
+  <input type="checkbox" id="darkModeToggle" />
+  <span class="slider"></span>
+</label>
+          <li><a href="#">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h2>Lighting Your Moments</h2>
+      <p>Professional photography, videography, and studio rentals tailored to your needs in Nairobi.</p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="card-grid">
+        <div class="card">
+          <img src="assets/photography.jpg" alt="Photography" />
+          <h3>Photography</h3>
+          <p>Portraits, events, commercial shoots — captured with precision and creativity.</p>
+        </div>
+        <div class="card">
+          <img src="assets/videography.jpg" alt="Videography" />
+          <h3>Videography</h3>
+          <p>High-quality videos for weddings, promos, and more using top-tier equipment.</p>
+        </div>
+        <div class="card">
+          <img src="assets/studio.jpg" alt="Studio Rental" />
+          <h3>Studio Rental</h3>
+          <p>Rent our professional space with controlled lighting and backdrops.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+<section id="portfolio" class="portfolio">
+  <div class="container">
+    <h2>Portfolio</h2>
+    <p>Take a look at some of our recent work across various studio sessions.</p>
+
+    <div class="gallery">
+      <img src="assets/photo1.jpg" alt="Photo 1" />
+      <img src="assets/photo2.jpg" alt="Photo 2" />
+      <img src="assets/photo3.jpg" alt="Photo 3" />
+      <img src="assets/photo4.jpg" alt="Photo 4" />
+      <img src="assets/photo5.jpg" alt="Photo 5" />
+      <img src="assets/photo6.jpg" alt="Photo 6" />
+      <img src="assets/photo7.jpg" alt="Photo 7" />
+      <img src="assets/photo8.jpg" alt="Photo 8" />
+      <img src="assets/photo9.jpg" alt="Photo 9" />
+      <img src="assets/photo10.jpg" alt="Photo 10" />
+      <img src="assets/photo11.jpg" alt="Photo 11" />
+      <img src="assets/photo12.jpg" alt="Photo 12" />
+      <img src="assets/photo13.jpg" alt="Photo 13" />
+      <img src="assets/photo14.jpg" alt="Photo 14" />
+      <img src="assets/photo15.jpg" alt="Photo 15" />
+      <img src="assets/photo16.jpg" alt="Photo 16" />      
+    </div>
+  </div>
+</section>
+
+  <!-- Video Highlights Section -->
+<section class="video-gallery">
+  <div class="container">
+    <h2>Our Video Highlights</h2>
+    <div class="video-grid">
+      <div class="video-card">
+        <video controls>
+          <source src="assets/video1.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <p>Behind the Scenes – Photo Shoot</p>
+      </div>
+
+      <div class="video-card">
+        <video controls>
+          <source src="assets/video2.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <p>Studio Equipment Showcase</p>
+      </div>
+
+      <div class="video-card">
+        <video controls>
+          <source src="assets/video3.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <p>Client Session Highlights</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>Email: contact@jambolightstudio.com</p>
+      <p>Phone: +254720600917</p>
+      <p>Location: Nairobi, Kenya</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Jambo Light Studio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Gallery Script: load 13 images -->
+  <script>
+    const gallery = document.getElementById("imageGallery");
+    const imageCount = 13;
+
+    for (let i = 1; i <= imageCount; i++) {
+      const img = document.createElement("img");
+      img.src = assets/photo${i}.jpg;
+      img.alt = Gallery image ${i};
+      gallery.appendChild(img);
+    }
+  </script>
+
+<script src="script.js"></script>
+</body>
+</html>
