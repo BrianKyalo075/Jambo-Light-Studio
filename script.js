@@ -1,72 +1,127 @@
-// Smooth scroll for nav links
-document.querySelectorAll('.nav-links a[href^="#"]').forEach(link => {
-  link.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
-});
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jambo Light Studio | Professional Studio Services</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-// Back to top button
-const backToTop = document.createElement('a');
-backToTop.href = '#';
-backToTop.className = 'back-to-top';
-backToTop.textContent = '↑ Top';
-document.body.appendChild(backToTop);
+  <!-- Header -->
+  <header class="navbar">
+    <div class="container navbar-container">
+      <h1 class="brand">Jambo Light Studio</h1>
+      <nav class="navigation">
+        <ul class="nav-links">
+          <!-- Dark mode toggle -->
+          <li>
+            <label class="dark-toggle">
+              <input type="checkbox" id="darkModeToggle" />
+              <span class="slider"></span>
+            </label>
+          </li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#video-highlights">Video Highlights</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-window.addEventListener('scroll', () => {
-  backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
-});
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container">
+      <h2>Lighting Your Moments</h2>
+      <p>Professional photography, videography, and studio rentals tailored to your needs in Nairobi.</p>
+    </div>
+  </section>
 
-// Lightbox (basic)
-document.querySelectorAll('.photo-gallery img').forEach(img => {
-  img.style.cursor = 'pointer';
-  img.addEventListener('click', () => {
-    const overlay = document.createElement('div');
-    overlay.style.position = 'fixed';
-    overlay.style.top = 0;
-    overlay.style.left = 0;
-    overlay.style.width = '100vw';
-    overlay.style.height = '100vh';
-    overlay.style.background = 'rgba(0, 0, 0, 0.8)';
-    overlay.style.display = 'flex';
-    overlay.style.alignItems = 'center';
-    overlay.style.justifyContent = 'center';
-    overlay.style.zIndex = '10000';
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="card-grid">
+        <div class="card">
+          <img src="photography.jpg" alt="Photography" />
+          <h3>Photography</h3>
+          <p>Portraits, events, commercial shoots — captured with precision and creativity.</p>
+        </div>
+        <div class="card">
+          <img src="videography.jpg" alt="Videography" />
+          <h3>Videography</h3>
+          <p>High-quality videos for weddings, promos, and more using top-tier equipment.</p>
+        </div>
+        <div class="card">
+          <img src="studio.jpg" alt="Studio Rental" />
+          <h3>Studio Rental</h3>
+          <p>Rent our professional space with controlled lighting and backdrops.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    const fullImage = document.createElement('img');
-    fullImage.src = img.src;
-    fullImage.style.maxWidth = '90%';
-    fullImage.style.maxHeight = '90%';
-    fullImage.style.borderRadius = '12px';
-    overlay.appendChild(fullImage);
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+      <h2>Portfolio</h2>
+      <p>Take a look at some of our recent work across various studio sessions.</p>
+      <div class="gallery" id="imageGallery">
+        <!-- Gallery images will be loaded by JavaScript -->
+      </div>
+    </div>
+  </section>
 
-    overlay.addEventListener('click', () => {
-      document.body.removeChild(overlay);
-    });
+  <!-- Video Highlights Section -->
+  <section id="video-highlights" class="video-gallery">
+    <div class="container">
+      <h2>Our Video Highlights</h2>
+      <div class="video-grid">
+        <div class="video-card">
+          <video controls>
+            <source src="video1.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <p>Behind the Scenes – Photo Shoot</p>
+        </div>
+        <div class="video-card">
+          <video controls>
+            <source src="video2.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <p>Studio Equipment Showcase</p>
+        </div>
+        <div class="video-card">
+          <video controls>
+            <source src="video3.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <p>Client Session Highlights</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    document.body.appendChild(overlay);
-  });
-});
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>Email: contact@jambolightstudio.com</p>
+      <p>Phone: +254720600917</p>
+      <p>Location: Nairobi, Kenya</p>
+    </div>
+  </section>
 
-// DARK MODE TOGGLE
-const toggle = document.getElementById('darkModeToggle');
-const body = document.body;
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Jambo Light Studio. All rights reserved.</p>
+    </div>
+  </footer>
 
-// Check saved preference
-if (localStorage.getItem('darkMode') === 'enabled') {
-  body.classList.add('dark-mode');
-  toggle.checked = true;
-}
-
-toggle.addEventListener('change', () => {
-  if (toggle.checked) {
-    body.classList.add('dark-mode');
-    localStorage.setItem('darkMode', 'enabled');
-  } else {
-    body.classList.remove('dark-mode');
-    localStorage.setItem('darkMode', 'disabled');
-  }
-});
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
