@@ -10,18 +10,21 @@
 
   <!-- Header -->
   <header class="navbar">
-    <div class="container">
+    <div class="container navbar-container">
       <h1 class="brand">Jambo Light Studio</h1>
       <nav class="navigation">
         <ul class="nav-links">
-            <!-- Dark mode toggle -->
-<label class="dark-toggle">
-  <input type="checkbox" id="darkModeToggle" />
-  <span class="slider"></span>
-</label>
+          <!-- Dark mode toggle -->
+          <li>
+            <label class="dark-toggle">
+              <input type="checkbox" id="darkModeToggle" />
+              <span class="slider"></span>
+            </label>
+          </li>
           <li><a href="#">Home</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#video-highlights">Video Highlights</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -29,7 +32,7 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero" id="home">
     <div class="container">
       <h2>Lighting Your Moments</h2>
       <p>Professional photography, videography, and studio rentals tailored to your needs in Nairobi.</p>
@@ -61,63 +64,45 @@
   </section>
 
   <!-- Portfolio Section -->
-<section id="portfolio" class="portfolio">
-  <div class="container">
-    <h2>Portfolio</h2>
-    <p>Take a look at some of our recent work across various studio sessions.</p>
-
-    <div class="gallery">
-      <img src="photo1.jpg" alt="Photo 1" />
-      <img src="photo2.jpg" alt="Photo 2" />
-      <img src="photo3.jpg" alt="Photo 3" />
-      <img src="photo4.jpg" alt="Photo 4" />
-      <img src="photo5.jpg" alt="Photo 5" />
-      <img src="photo6.jpg" alt="Photo 6" />
-      <img src="photo7.jpg" alt="Photo 7" />
-      <img src="photo8.jpg" alt="Photo 8" />
-      <img src="photo9.jpg" alt="Photo 9" />
-      <img src="photo10.jpg" alt="Photo 10" />
-      <img src="photo11.jpg" alt="Photo 11" />
-      <img src="photo12.jpg" alt="Photo 12" />
-      <img src="photo13.jpg" alt="Photo 13" />
-      <img src="photo14.jpg" alt="Photo 14" />
-      <img src="photo15.jpg" alt="Photo 15" />
-      <img src="photo16.jpg" alt="Photo 16" />      
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+      <h2>Portfolio</h2>
+      <p>Take a look at some of our recent work across various studio sessions.</p>
+      <div class="gallery" id="imageGallery">
+        <!-- Gallery images will be loaded by JavaScript -->
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- Video Highlights Section -->
-<section class="video-gallery">
-  <div class="container">
-    <h2>Our Video Highlights</h2>
-    <div class="video-grid">
-      <div class="video-card">
-        <video controls>
-          <source src="video1.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <p>Behind the Scenes – Photo Shoot</p>
-      </div>
-
-      <div class="video-card">
-        <video controls>
-          <source src="video2.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <p>Studio Equipment Showcase</p>
-      </div>
-
-      <div class="video-card">
-        <video controls>
-          <source src="video3.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <p>Client Session Highlights</p>
+  <section id="video-highlights" class="video-gallery">
+    <div class="container">
+      <h2>Our Video Highlights</h2>
+      <div class="video-grid">
+        <div class="video-card">
+          <video controls>
+            <source src="video1.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <p>Behind the Scenes – Photo Shoot</p>
+        </div>
+        <div class="video-card">
+          <video controls>
+            <source src="video2.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <p>Studio Equipment Showcase</p>
+        </div>
+        <div class="video-card">
+          <video controls>
+            <source src="video3.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <p>Client Session Highlights</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- Contact Section -->
   <section id="contact" class="contact">
@@ -136,19 +121,7 @@
     </div>
   </footer>
 
-  <!-- Gallery Script: load 13 images -->
-  <script>
-    const gallery = document.getElementById("imageGallery");
-    const imageCount = 13;
-
-    for (let i = 1; i <= imageCount; i++) {
-      const img = document.createElement("img");
-      img.src = photo${i}.jpg;
-      img.alt = Gallery image ${i};
-      gallery.appendChild(img);
-    }
-  </script>
-
-<script src="script.js"></script>
+  <!-- Scripts -->
+  <script src="script.js"></script>
 </body>
 </html>
